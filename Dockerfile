@@ -1,5 +1,5 @@
 FROM alpine:latest
 
-RUN apk --no-cache add lshw
-
-CMD uname -m && lshw -short
+RUN apk --no-cache add lshw && \
+    uname -m && \
+    lshw -short
