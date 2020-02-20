@@ -5,6 +5,7 @@ NAME_IMAGE="${DOCKER_USERNAME}/demo:latest"
 
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
+echo '- Checking login status: '
 docker login || {
     echo 'You need to login Docker Cloud/Hub first.'
     exit 1
