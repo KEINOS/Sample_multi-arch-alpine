@@ -1,7 +1,9 @@
 #!/bin/bash
 
 NAME_BUILDER='multibuilder'
-NAME_IMAGE='keinos/demo:latest'
+NAME_IMAGE="${DOCKER_USERNAME}/demo:latest"
+
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
 docker login || {
     echo 'You need to login Docker Cloud/Hub first.'
