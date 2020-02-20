@@ -1,11 +1,4 @@
 #!/bin/bash
-echo '- Old Docker Version'
-sudo cat /etc/docker/daemon.json
-docker version
-docker version -f '{{.Server.Experimental}}'
-
-sudo systemctl stop docker
-sudo systemctl start docker
 
 echo '- New Docker Version'
 sudo cat /etc/docker/daemon.json
