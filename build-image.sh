@@ -4,7 +4,7 @@ sudo cat /etc/docker/daemon.json
 docker version
 docker version -f '{{.Server.Experimental}}'
 
-echo '{"registry-mirrors": ["https://mirror.gcr.io"], "mtu": 1460, "experimental": true}' > sudo /etc/docker/daemon.json
+echo '{"registry-mirrors": ["https://mirror.gcr.io"], "mtu": 1460, "experimental": true}' | sudo sh -c 'cat - > /etc/docker/daemon.json'
 sudo service docker restart
 
 echo '- New Docker Version'
