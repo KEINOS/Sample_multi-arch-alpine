@@ -12,7 +12,7 @@ jobs:
   include:
     - stage: build docker image
       script:
-      - cat /etc/docker/daemon.json
+      - sudo cat /etc/docker/daemon.json
       - docker version
       - docker version -f '{{.Server.Experimental}}'
       - sudo ./build-image.sh
