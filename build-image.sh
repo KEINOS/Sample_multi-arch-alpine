@@ -1,10 +1,11 @@
 #!/bin/bash
 
-echo '- Mode experimantal: ' $DOCKER_CLI_EXPERIMENTAL
-echo '- New Docker Version'
+echo '- Docker Info'
 sudo cat /etc/docker/daemon.json
 docker version
-docker version -f '{{.Server.Experimental}}'
+docker buildx version
+sudo docker run --rm --privileged linuxkit/binfmt
+ls -l /proc/sys/fs/binfmt_misc/
 
 NAME_BUILDER='multibuilder'
 NAME_IMAGE="${DOCKER_USERNAME}/demo:latest"
