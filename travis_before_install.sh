@@ -13,12 +13,7 @@ tree ~/.docker/cli-plugins/
 echo '- Donwload Plugins:'
 mkdir -p ~/.docker/cli-plugins/docker-buildx
 cd ~/.docker/cli-plugins/docker-buildx && \
-curl \
-    -O https://github.com/docker/buildx/releases/download/v0.3.1/buildx-v0.3.1.darwin-amd64 \
-    -O https://github.com/docker/buildx/releases/download/v0.3.1/buildx-v0.3.1.linux-amd64 \
-    -O https://github.com/docker/buildx/releases/download/v0.3.1/buildx-v0.3.1.linux-arm-v6 \
-    -O https://github.com/docker/buildx/releases/download/v0.3.1/buildx-v0.3.1.linux-arm-v7 \
-    -O https://github.com/docker/buildx/releases/download/v0.3.1/buildx-v0.3.1.linux-arm64
+curl -o docker-buildx https://github.com/docker/buildx/releases/download/v0.3.1/buildx-v0.3.1.linux-amd64
 chmod a+x ~/.docker/cli-plugins/docker-buildx
 
 echo '- Installed Plugins:'
