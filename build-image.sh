@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo '- Mode experimantal: ' $DOCKER_CLI_EXPERIMENTAL
 echo '- New Docker Version'
 sudo cat /etc/docker/daemon.json
 docker version
