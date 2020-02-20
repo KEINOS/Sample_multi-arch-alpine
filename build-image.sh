@@ -3,10 +3,7 @@
 NAME_BUILDER='multibuilder'
 NAME_IMAGE="${DOCKER_USERNAME}/demo:latest"
 
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-
-echo '- Checking login status: '
-docker login || {
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin || {
     echo 'You need to login Docker Cloud/Hub first.'
     exit 1
 }
