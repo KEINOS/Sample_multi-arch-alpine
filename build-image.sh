@@ -1,12 +1,13 @@
 #!/bin/bash
 sudo cat /etc/docker/daemon.json
+echo '- Old Docker Version'
 docker version
 docker version -f '{{.Server.Experimental}}'
 
 echo '{"registry-mirrors": ["https://mirror.gcr.io"], "mtu": 1460, "experimental": true}' > sudo /etc/docker/daemon.json
-sudo systemctl daemon-reload
-sudo systemctl restart docker
+sudo service restart docker
 
+echo '- New Docker Version'
 docker version
 docker version -f '{{.Server.Experimental}}'
 
