@@ -1,12 +1,15 @@
 dist: bionic
 
-sudo: required
+addons:
+  apt:
+    sources:
+      - docker-bionic
 
 env:
   - DOCKER_CLI_EXPERIMENTAL=enabled
 
 before_install:
-  - ./travis_before_install.sh
+  - sudo ./travis_before_install.sh
 
 jobs:
   include:
